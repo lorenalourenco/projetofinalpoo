@@ -1,0 +1,57 @@
+{% load static %}
+
+{% block title %}Liz&Lo{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h2 class="card-title">Dashboard</h2>
+            <p class="card-description">Clone um repositório e gere um diagrama</p>
+        </div>
+        <div class="card-content">
+            <form method="POST" action="{% url 'dashboard' %}">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="repo_url">URL do Repositório</label>
+                    <input type="url" id="repo_url" name="repo_url" required placeholder="Digite a URL do repositório">
+                </div>
+                <button type="submit" class="btn btn-primary">
+                    <span class="btn-text">Clonar e Gerar Diagrama</span>
+                    <span class="btn-spinner hidden"></span>
+                </button>
+            </form>
+        </div>
+        <div class="card-footer">
+            <form action="{% url 'logout' %}" method="post">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-secondary">Sair</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% if error %}
+<div class="toast-container">
+    <div class="toast error">
+        {{ error }}
+    </div>
+</div>
+{% endif %}
+
+{% if success %}
+<div class="toast-container">
+    <div class="toast success">
+        {{ success }}
+    </div>
+</div>
+{% endif %}
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/dashboard.js' %}"></script>
+{% endblock %}

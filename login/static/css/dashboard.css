@@ -1,0 +1,143 @@
+/* static/css/dashboard.css */
+body {
+    background-color: #fce4ec; /* Light pink background */
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 60px); /* Adjust for header height */
+}
+
+.card {
+    width: 400px;
+    background-color: white;
+    border-radius: var(--radius);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.card-header {
+    padding: 1.5rem;
+    text-align: center;
+    background-color: #f8bbd0; /* Slightly darker pink for header */
+    border-top-left-radius: var(--radius);
+    border-top-right-radius: var(--radius);
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #880e4f; /* Dark pink for title */
+}
+
+.card-description {
+    color: #ad1457; /* Medium pink for description */
+    font-size: 0.875rem;
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: #ad1457; /* Medium pink for labels */
+}
+
+input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #f48fb1; /* Light pink border */
+    border-radius: var(--radius);
+    font-size: 0.875rem;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-primary {
+    background-color: #c2185b; /* Dark pink for primary button */
+    color: white;
+    width: 100%;
+}
+
+.btn-primary:hover {
+    background-color: #ad1457;
+}
+
+.btn-secondary {
+    background-color: #f48fb1; /* Light pink for secondary button */
+    color: #880e4f;
+    width: 100%;
+}
+
+.btn-secondary:hover {
+    background-color: #f06292;
+}
+
+.btn-spinner {
+    width: 1rem;
+    height: 1rem;
+    border: 2px solid white;
+    border-top: 2px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-left: 0.5rem;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.hidden {
+    display: none;
+}
+
+.card-footer {
+    padding: 1rem 1.5rem;
+    text-align: center;
+    border-top: 1px solid #f8bbd0; /* Light pink border */
+}
+
+.toast-container {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 50;
+}
+
+.toast {
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius);
+    margin-bottom: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.toast.error {
+    background-color: #ffcdd2;
+    color: #b71c1c;
+}
+
+.toast.success {
+    background-color: #c8e6c9;
+    color: #1b5e20;
+}
